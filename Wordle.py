@@ -25,18 +25,9 @@ def wordle():
     gw.add_enter_listener(enter_action)
 
     # Breaks word up
-    for letter in randomWord:
+    for index, letter in enumerate(randomWord):
         nextLetter.append(letter)
-
-        # Adds letter to end of row
-        for i in nextLetter:
-            gw.set_square_letter(0, 0, i)
-            gw.set_square_letter(0, 1, i)
-            gw.set_square_letter(0, 2, i)
-            gw.set_square_letter(0, 3, i)
-            gw.set_square_letter(0, 4, i)
-
-    print(nextLetter)
+        gw.set_square_letter(0, index, letter)
 
 
 # Startup code
