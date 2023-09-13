@@ -30,7 +30,7 @@ def wordle():
 
         # Adds letter to end of row
         for i in nextLetter:
-            gw.set_square_letter(0, 4, i)
+            gw.set_square_letter(0, 0, i)
 
     print(nextLetter)
 
