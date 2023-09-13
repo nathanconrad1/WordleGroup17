@@ -12,10 +12,9 @@ from WordleGraphics import WordleGWindow, N_COLS, N_ROWS
 
 # Selects random word
 randomWord = random.choice(FIVE_LETTER_WORDS)
-nextLetter = []
 
-# For previous code tries, if needed
-# ([*randomWord])
+# This list is for each letter
+nextLetter = []
 
 
 def wordle():
