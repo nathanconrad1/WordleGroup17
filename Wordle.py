@@ -28,8 +28,12 @@ def wordle():
     # Breaks word up
     for letter in randomWord:
         nextLetter.append(letter)
-        gw.set_square_letter(0, 0, letter)
-        print(nextLetter)
+
+        # Adds letter to end of row
+        for i in nextLetter:
+            gw.set_square_letter(0, 4, i)
+
+    print(nextLetter)
 
 
 # Startup code
