@@ -27,7 +27,7 @@ def wordle():
     # Breaks word up
     for index, letter in enumerate(randomWord):
         nextLetter.append(letter)
-        gw.set_square_letter(0, index, letter)
+        gw.set_square_letter(N_COLS - 5, index, letter)
 
 
 # Startup code
