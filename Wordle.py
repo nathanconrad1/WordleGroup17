@@ -10,8 +10,14 @@ import random
 from WordleDictionary import FIVE_LETTER_WORDS
 from WordleGraphics import WordleGWindow, N_COLS, N_ROWS
 
-def wordle():
+# Selects random word
+randomWord = random.choice(FIVE_LETTER_WORDS)
 
+# This list is for each letter
+nextLetter = []
+
+
+def wordle():
     def enter_action(s):
         
         if s.lower() in FIVE_LETTER_WORDS:
@@ -22,7 +28,12 @@ def wordle():
     gw = WordleGWindow()
     gw.add_enter_listener(enter_action)
 
-# Startup code
+    # Breaks word up
+    for index, letter in enumerate(randomWord):
+        nextLetter.append(letter)
+        gw.set_square_letter(N_COLS - 5, index, letter)
 
+
+# Startup code
 if __name__ == "__main__":
     wordle()
