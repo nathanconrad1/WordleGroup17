@@ -13,7 +13,11 @@ from WordleGraphics import WordleGWindow, N_COLS, N_ROWS
 def wordle():
 
     def enter_action(s):
-        gw.show_message("You have to implement this method.")
+        
+        if s.lower() in FIVE_LETTER_WORDS:
+            gw.set_current_row(gw.get_current_row() + 1)
+        else:
+            gw.show_message("invalid word entered")
 
     gw = WordleGWindow()
     gw.add_enter_listener(enter_action)
