@@ -29,13 +29,14 @@ def wordle():
             for index, l in enumerate(s):
                 chosenLetter.append(l)
                 # gw.set_square_letter(N_COLS - 5, index, l)
-            gw.set_current_row(gw.get_current_row() + 1)
 
             x = 0
 
             for anyLetter in nextLetter:
                 if anyLetter == chosenLetter[x]:
                     gw.set_square_color(gw.get_current_row(), x, CORRECT_COLOR)
+
+            gw.set_current_row(gw.get_current_row() + 1)
 
         else:
             gw.show_message("Not in word list")
@@ -45,9 +46,9 @@ def wordle():
 
     # Milestone 1:
     # Breaks word up
-    # for index, letter in enumerate(randomWord):
-    # nextLetter.append(letter)
-    # gw.set_square_letter(N_COLS - 5, index, letter)
+    for index, letter in enumerate(randomWord):
+        nextLetter.append(letter)
+        gw.set_square_letter(N_COLS - 5, index, letter)
 
 
 # Startup code
