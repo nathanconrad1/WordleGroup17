@@ -7,6 +7,7 @@ BE SURE TO UPDATE THIS COMMENT WHEN YOU WRITE THE CODE.
 
 import random
 
+from tkinter import *
 from WordleDictionary import FIVE_LETTER_WORDS
 from WordleGraphics import (
     WordleGWindow,
@@ -15,11 +16,8 @@ from WordleGraphics import (
     CORRECT_COLOR,
     PRESENT_COLOR,
     MISSING_COLOR,
-    KEY_LABELS,
     WordleKey,
 )
-
-from tkinter import *
 
 # Selects random word
 randomWord = random.choice(FIVE_LETTER_WORDS)
@@ -34,15 +32,11 @@ def wordle():
             chosenLetter = []
             for index, letter in enumerate(randomWord):
                 nextLetter.append(letter.upper())
-                # gw.set_square_letter(N_COLS - 5, index, letter)
 
             for index, l in enumerate(s):
                 chosenLetter.append(l.upper())
-                # gw.set_square_letter(N_COLS - 5, index, l)
             print(chosenLetter)
             print(nextLetter)
-
-            # x = 0
 
             for index, anyLetter in enumerate(nextLetter):
                 if chosenLetter[index] in nextLetter:
@@ -62,17 +56,14 @@ def wordle():
     gw = WordleGWindow()
     gw.add_enter_listener(enter_action)
 
-    # Marcus' Button Tests
-    window = Tk()
-    button = Button(window, text="Hola")
-    button.pack()
+    # Function for Color Scheme
+    # def changeColorScheme()
 
-    # kl = KEY_LABELS()
-    # kl.append("Change Color Scheme")
+    # Color Scheme Button
+    colorScheme = WordleKey(gw._canvas, 28, 465, 190, 50, "Change Color Scheme")
 
-    # wk = WordleKey(Canvas, X, Y, 25, 25, "Change Color Scheme")
-    # colorSchemeBtn = Button(wk, text="Change Color Scheme")
-    # colorSchemeBtn.pack()
+    # Share Results Button
+    shareResults = WordleKey(gw._canvas, 352, 465, 122, 50, "Share Results")
 
     # Milestone 1:
     # Breaks word up
