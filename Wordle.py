@@ -38,6 +38,14 @@ def wordle():
             print(chosenLetter)
             print(nextLetter)
 
+<<<<<<< HEAD
+=======
+            x = 0
+            
+            tempList = nextLetter
+            chosenTemp = chosenLetter
+            
+>>>>>>> e6cae9d80655bd2b68d72aa846cd7e0bd0217ec5
             for index, anyLetter in enumerate(nextLetter):
                 if chosenLetter[index] in nextLetter:
                     print("yellow")
@@ -48,8 +56,37 @@ def wordle():
                 if anyLetter == chosenLetter[index]:
                     print("green")
                     gw.set_square_color(gw.get_current_row(), index, CORRECT_COLOR)
+                    tempList[index] = '_'
+                    chosenTemp[index] = '='
+
+            for index, tempLetter in enumerate(chosenTemp):
+                    
+                for dex, cTempletter in enumerate(tempList):
+                    print(tempLetter)
+                    print(chosenTemp[index])
+                    if chosenTemp[index] == tempList[dex]:
+                        tempList[dex] = '-'
+                        print('yellow')
+                        gw.set_square_color(gw.get_current_row(), index, PRESENT_COLOR)
+                        
+                        print('entered')
+                        break
+                        # if letterCount > 1:
+                        #     chosenTemp[index] = '-'
+                    
+                print(tempList)
+                # if chosenTemp[index] in tempList:
+
 
             gw.set_current_row(gw.get_current_row() + 1)
+
+            for index, finished in enumerate(tempList):
+                if tempList[index] == '_':
+                    x += 1
+
+            if x == 5:
+                gw.show_message("Congrats you have guessed the word!")
+                gw.set_current_row(gw.get_current_row() + 6)
         else:
             gw.show_message("Not in word list")
 
